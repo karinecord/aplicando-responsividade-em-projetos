@@ -1,0 +1,145 @@
+/* secao de destaques da homepage */
+section header {
+  border-top: 1px solid var(--stroke-color);
+  padding-block: 12px 24px;
+  font: var(--text-span);
+
+  a {
+    justify-self: end;
+    align-items: center;
+    gap: 8px;
+
+    span {
+      background-image: url(../assets/icons/ArrowRight.svg);
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover span {
+      background-image: url(../assets/icons/ArrowRight-Hover.svg);
+    }
+  }
+}
+
+#featured {
+  grid-area: featured;
+
+  /* nesting: estiliza todas as imagens dentro de #featured */
+  img {
+    /* faz a imagem ocupar toda a altura do container pai */
+    height: 100%;
+
+    /* object-fit cover: a imagem preenche o espaco sem distorcer, cortando o excesso */
+    object-fit: cover;
+  }
+
+  /* Card: elemento de referencia para o pseudo-elemento ::before */
+  .card {
+    /* arredonda os cantos do card */
+    border-radius: 4px;
+
+    /* overflow hidden: esconde tudo que ultrapassar o border-radius (ex: cantos da imagem) */
+    overflow: hidden;
+
+    /* necessario para que o ::before se posicione relativo ao card */
+    position: relative;
+
+    /* ::before: camada invisivel colocada sobre a imagem para criar o efeito de gradiente */
+    &::before {
+      /* obrigatorio para o pseudo-elemento aparecer visualmente */
+      content: "";
+
+      /* flutua por cima da imagem sem ocupar espaco no layout */
+      position: absolute;
+
+      /* inset 0: estica o ::before para cobrir todos os lados (top, right, bottom, left = 0) */
+      inset: 0;
+
+      /* sobrepoe o inset: faz o gradiente comecar so na metade inferior do card */
+      top: 50%;
+
+      /* gradiente de transparente para escuro, cria contraste para texto por cima */
+      background: linear-gradient(180deg,
+          transparent 0%,
+          #020617 100%)
+    }
+
+    /* figcaption: legenda que fica sobre a imagem na parte inferior */
+    figcaption {
+      /* tira do fluxo normal e posiciona relativo ao .card */
+      position: absolute;
+
+      /* gruda na parte de baixo do card */
+      bottom: 0;
+
+      /* espaco interno para o texto nao ficar colado nas bordas */
+      padding: 24px;
+
+      &:has(.text-lg) {
+        padding: 12px;
+      }
+
+      h2 {
+        /* espaco entre a tag de categoria e o titulo */
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+#weekly {
+  grid-area: weekly;
+
+  &>div {
+    grid-template-columns: repeat(4, 292px);
+  }
+
+  img {
+    height: 160px;
+  }
+
+  figure {
+    position: relative;
+
+    .content-tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+
+    p {
+      margin-top: 8px;
+      font-weight: 800;
+    }
+  }
+}
+
+#ai {
+  grid-area: ai;
+
+  img {
+    width: 176px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin-block: 8px 4px;
+  }
+}
+
+aside {
+  grid-area: aside;
+}
+
+#more {
+  margin-top: 32px;
+  h3{
+    margin-top: 8px;
+  }
+  img {
+    width: 72px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+}
