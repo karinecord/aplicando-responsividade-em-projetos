@@ -1,0 +1,107 @@
+@media screen and (max-width: 768px) {
+
+  /* ---- NAV ----
+     No mobile, reduzimos o gap entre os itens do menu
+     e o tamanho da fonte para caber na tela sem quebrar linha */
+  nav ul {
+    gap: 12px;
+  }
+
+  nav ul li a {
+    font-size: 13px;
+  }
+
+  /* ---- HEADER ----
+     O header tem dois blocos lado a lado (perfil + info).
+     No mobile, empilhamos eles verticalmente com flex-direction: column */
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  /* O bloco de perfil (foto + texto) também fica empilhado no mobile */
+  #profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* Remove a largura máxima fixa do texto do perfil para ocupar a tela toda */
+  #profile > div {
+    max-width: 100%;
+  }
+
+  /* Diminui o título do nome no mobile */
+  #profile h1 {
+    font-size: 24px;
+  }
+
+  /* Remove a largura fixa da lista de info (países, fotos, localização) */
+  #info {
+    width: 100%;
+  }
+
+  /* ---- MAIN (galeria de fotos) ----
+     As imagens tinham tamanho fixo de 286x286px.
+     No mobile, usamos calc() para calcular o tamanho dinamicamente:
+     - 100% da largura disponível
+     - dividido por 2 colunas
+     - menos o gap de 24px entre elas */
+  main img {
+    width: calc((100% - 24px) / 2);
+    height: auto; /* altura automática mantém a proporção da imagem */
+    aspect-ratio: 1 / 1; /* garante que a imagem fique quadrada */
+    object-fit: cover;
+  }
+
+  /* ---- FOOTER ----
+     No mobile, empilhamos os textos do rodapé verticalmente */
+  footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Remove o margin-right automático que empurrava os outros itens para a direita */
+  footer span:nth-child(1) {
+    margin-right: 0;
+  }
+}
+
+/* ============================================
+   Breakpoint extra pequeno: 480px (celulares menores)
+   ============================================ */
+
+@media screen and (max-width: 480px) {
+
+  /* Reduz o padding lateral para aproveitar mais espaço na tela */
+  .container {
+    padding-inline: 16px;
+  }
+
+  /* ---- NAV no iPhone ----
+     O nav vira duas linhas: logo em cima, menu embaixo.
+     flex-wrap: wrap permite que os itens quebrem linha.
+     justify-content: center centraliza o menu na segunda linha */
+  nav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* O logo ocupa a linha inteira para empurrar o menu para baixo */
+  nav #logo {
+    flex: 1;
+  }
+
+  /* O menu centralizado abaixo do logo */
+  /* nav ul {
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+  } */
+
+  /* Na tela muito pequena, cada foto ocupa a largura toda */
+  main img {
+    width: 100%;
+  }
+}
