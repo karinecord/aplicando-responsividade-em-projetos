@@ -94,11 +94,11 @@
   }
 
   /* O menu centralizado abaixo do logo */
-  nav ul {
+  /* nav ul {
     width: 100%;
     justify-content: center;
     gap: 16px;
-  }
+  } */
 
   /* Na tela muito pequena, cada foto ocupa a largura toda */
   main img {

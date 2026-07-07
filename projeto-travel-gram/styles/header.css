@@ -1,5 +1,6 @@
 header {
   padding-block: 32px;
+  background-color: var(--surface-color);
 }
 
 header .container {
@@ -26,6 +27,7 @@ header .container {
 
 #profile p {
   font: var(--text-md);
+  line-height: 170%;
 }
 
 .profile img {
