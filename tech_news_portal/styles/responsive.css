@@ -1,0 +1,133 @@
+@media screen and (max-width: 768px) {
+  .grid-flow-col {
+    grid-auto-flow: row;
+ 
+    
+  }
+
+  #primary.grid-flow-col {
+    grid-auto-flow: column;
+  }
+
+  #primary div:first-child strong {
+    display: none;
+  }
+
+  .menu-label-search {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  #secondary {
+    display: none;
+  }
+
+  .menu-toggle:checked ~ #secondary {
+    display: grid;
+  }
+
+  .grid.grid-cols-2.gap-16 {
+    display: flex;
+    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  header.grid-flow-col {
+    grid-auto-flow: column;
+  }
+
+  header a.grid-flow-col {
+    grid-auto-flow: column;
+    gap: 4px;
+  }
+
+  .grid.gap-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ai {
+    grid-auto-flow: column;
+    gap: 24px;
+  }
+
+  .grid.gap-32 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    grid-template-areas:
+      "featured"
+      "weekly"
+      "ai"
+      "aside";
+  }
+
+  .grid.grid-flow-col.gap-16 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  article h3 {
+    /* limita o titulo do card a no maximo 2 linhas, cortando o resto com "..." */
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .text-xl {
+    padding-top: 8px;
+  }
+
+  #more .grid.grid-flow-col.gap-16 {
+    grid-template-columns: 72px 1fr;
+  }
+
+  #ai article div:last-child {
+    order: -1;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .text-sm {
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  #featured {
+    grid-template-columns: 1fr;
+  }
+
+  #featured > figure.card {
+    aspect-ratio: 3 / 4;
+  }
+
+  #featured > figure.card .text-2xl {
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+
+
+

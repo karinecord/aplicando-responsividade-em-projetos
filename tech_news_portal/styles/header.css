@@ -3,6 +3,9 @@
   /* padding-block: espaco interno em cima e embaixo (equivale a padding-top + padding-bottom) */
   padding-block: 20px;
 
+  /* alinha os itens do grid (menu, logo, busca) na mesma linha vertical */
+  align-items: center;
+
   /* nesting css: estiliza divs filhas direto dentro do seletor pai, sem repetir #primary */
   div {
     /* flex: coloca os filhos (icone + texto) lado a lado */

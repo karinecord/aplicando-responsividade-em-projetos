@@ -10,6 +10,7 @@ section header {
     gap: 8px;
 
     span {
+      display: inline-block;
       background-image: url(../assets/icons/ArrowRight.svg);
       width: 16px;
       height: 16px;
@@ -17,6 +18,14 @@ section header {
 
     &:hover span {
       background-image: url(../assets/icons/ArrowRight-Hover.svg);
+    }
+
+    & strong {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 4px;
     }
   }
 }
@@ -59,9 +68,7 @@ section header {
       top: 50%;
 
       /* gradiente de transparente para escuro, cria contraste para texto por cima */
-      background: linear-gradient(180deg,
-          transparent 0%,
-          #020617 100%)
+      background: linear-gradient(180deg, transparent 0%, #020617 100%);
     }
 
     /* figcaption: legenda que fica sobre a imagem na parte inferior */
@@ -90,7 +97,7 @@ section header {
 #weekly {
   grid-area: weekly;
 
-  &>div {
+  & > div {
     grid-template-columns: repeat(4, 292px);
   }
 
@@ -134,7 +141,7 @@ aside {
 
 #more {
   margin-top: 32px;
-  h3{
+  h3 {
     margin-top: 8px;
   }
   img {
