@@ -1,0 +1,71 @@
+﻿/*
+calculo do main +  aside = 51.25% + 48.75% = 100%
+ (656 - largura main * 100)/1280 = 51.25% 
+  624 - largura aside= 48.75% 
+  height: 100vh - A viewport Ã© a Ã¡rea visÃ­vel da janela do navegador.
+  Regra:
+  1vh = 1% da altura da tela
+  100vh = 100% da altura da tela inteira
+  ConteÃºdo fica centralizado na tela inteira.
+
+
+*/
+#app {
+  display: grid;
+  grid-template-columns: 51.25% 48.75%;
+  height: 100vh;
+  overflow: hidden;
+  /*Tela fixa sem rolagem*/
+}
+
+main {
+  overflow: auto;
+  /*Tela com rolagem*/
+  padding: 4rem;
+  /*No layout temos padding = 64/16 = 4, isso em rem*/
+
+  & .main-container {
+    /* Para que serve max-width?
+    Serve para impedir que um elemento fique largo demais.
+    No layout temos padding = 528/16 = 33, isso em rem*/
+    max-width: 33rem;
+    margin-left: auto;
+  }
+
+  & .back{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  & h1{
+    font: 600 1.5rem/1.25 var(--font-family);
+    margin-top: .5rem;
+  }
+}
+
+aside {
+  background-color: var(--surface-secondary);
+  padding: 4rem;
+  overflow: auto;
+
+  & .aside-container {
+    /* Para que serve max-width?
+    Serve para impedir que um elemento fique largo demais.
+    No layout temos padding = 496/16 = 31, isso em rem*/
+    max-width: 31rem;
+
+    & > img{
+     margin-top: 2rem;
+    }
+  }
+
+  & h2{
+    font: 600 2.5rem/1.25 var(--font-family);
+    margin-bottom: .5rem;
+    & span{
+      color: var(--text-highlight);
+    }
+  }
+}

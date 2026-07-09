@@ -1,0 +1,86 @@
+/* Breakpoint mobile: aplica-se a telas com largura maxima de 768px (tablets e celulares) */
+@media screen and (max-width: 768px) {
+  /* Permite que o conteudo cresca alem da altura da viewport, evitando cortes no layout desktop */
+  body {
+    overflow: visible;
+  }
+
+  /* #app usa grid no desktop (colunas lado a lado); no mobile vira 1 coluna para empilhar main e aside */
+  #app {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* main vem depois do aside no empilhamento (order: 2), com padding menor no mobile */
+  main {
+    overflow: visible;
+    order: 2;
+    padding: 10px;
+  }
+
+  /* aside sobe para o topo (order: 1) para exibir a imagem/identidade visual antes do formulario */
+  aside {
+    overflow: visible;
+    order: 1;
+  }
+
+  /* Esconde titulo e descricao do aside no mobile para economizar espaco vertical */
+  .aside-container {
+    .title-label {
+      display: none;
+    }
+
+    .description-label {
+      display: none;
+    }
+  }
+
+  /* Reduz o padding lateral do container principal em relacao ao desktop */
+  .main-container {
+    padding: 24px 24px;
+  }
+
+  /* Elementos com .flex (ex: grupos de campos lado a lado) passam a empilhar verticalmente */
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Ajustes finos de espacamento entre os fieldsets do formulario no layout empilhado */
+  fieldset.gardian {
+    margin-top: auto;
+  }
+
+  fieldset.child-info legend {
+    margin-block: auto;
+  }
+
+  fieldset.enroll-otpions {
+    margin-top: 24px;
+  }
+
+  .terms-wrapper {
+    margin-top: 1rem;
+  }
+
+  /* Botoes de acao empilham em coluna e ocupam quase toda a largura, facilitando o toque no mobile */
+  .actions-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+
+    & button {
+      &.btn-secondary {
+        width: 90%;
+        text-align: center;
+      }
+      &.btn-primary {
+        width: 90%;
+        text-align: center;
+      }
+    }
+  }
+}
