@@ -41,6 +41,7 @@ enrollment-form-project/
 │   ├── global.css
 │   ├── layout.css
 │   ├── forms.css
+|   |── responsive.css
 │   └── fields/
 │       ├── index.css
 │       ├── input.css
